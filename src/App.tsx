@@ -1,19 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Confirm } from './Confirm/Confirm';
+
+const onCancel = () => {
+    console.log('cancelled');
+};
+
+const onConfirm = () => {
+    console.log('confirmed');
+};
 
 function App() {
     return (
         <div className='App'>
-            <header className='App-header'>
-                <img src={logo} className='App-logo' alt='logo' />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-                    Learn React
-                </a>
-            </header>
+            <Confirm title='Are you sure?' content='You are not going back.' onCancel={onCancel} onConfirm={onConfirm}></Confirm>
         </div>
     );
 }
